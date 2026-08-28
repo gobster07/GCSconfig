@@ -1,10 +1,30 @@
 public class Item {
     private int id;
     private String title;
+    private String data;
+    private String author;
 
-        public Item (int id, String title){
+    public Item (int id, String title,String author,String data){
         this.id = id;
         this.title = title;
+        this.author = author;
+        this.data= data;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
     }
 
     public Item () {
