@@ -3,8 +3,8 @@ public class DVDs extends Item{
 private String typeOf;
 private String description;
 
-    public DVDs(int id, String title, String typeOf, String description) {
-        super(id, title);
+    public DVDs(int id, String title,String author, String data, String typeOf, String description) {
+        super(id, title,author, data);
         this.typeOf = typeOf;
         this.description = description;
     }

@@ -1,10 +1,9 @@
-public class Livro extends Item{
+import java.util.Scanner;
+ class Livro extends Item{
     private String genero;
-    private int page;
     private String publisher;
-    public Livro(int id, String title,String data, String author, String genero, int page,String publisher){
+    public Livro(int id, String title,String data, String author, String genero,String publisher){
         super(id,title,author,data);
-        this.page = page;
         this.genero = genero;
         this.publisher = publisher;
     }
@@ -17,14 +16,6 @@ public class Livro extends Item{
         this.genero = genero;
     }
 
-    public int getPage() {
-        return page;
-    }
-
-    public void setPage(int page) {
-        this.page = page;
-    }
-
     public String getPublisher() {
         return publisher;
     }
@@ -32,4 +23,10 @@ public class Livro extends Item{
     public void setPublisher(String publisher) {
         this.publisher = publisher;
     }
+
+    public String toString(){
+        return super.toString()+" "+genero+" "+publisher;
+    }
+
+
 }
