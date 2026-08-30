@@ -7,7 +7,10 @@ public class Biblioteca {
     }
 
     public void cadastrar(Item item){
-        lista.add(item);
+        if(item != null) {
+            lista.add(item);
+        }
+
     }
 
     public void showAll(){

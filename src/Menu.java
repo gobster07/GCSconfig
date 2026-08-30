@@ -17,11 +17,12 @@ public class Menu {
         int op = in.nextInt();
         switch(op){
             case 1:
-                biblioteca.cadastrar(item.cadastrarLivro(in));
+                biblioteca.cadastrar(item.cadastro(in));
                 menuStart();
                 break;
             default:
                 biblioteca.showAll();
+                menuStart();
                 break;
         }
     }
