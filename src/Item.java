@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Item {
@@ -71,7 +72,15 @@ public class Item {
             case 1:
                 item = this.cadastrarLivro(in);
                 break;
-
+            case 2:
+                item = this.cadastrarCd(in);
+                break;
+            case 3:
+                item = this.cadastrarDVD(in);
+                break;
+            case 4:
+                item = this.cadastrarRevista(in);
+                break;
             default:
                 item = null;
                 break;
@@ -131,27 +140,65 @@ public class Item {
     }
 
     public Item cadastrarCd(Scanner in){
+        CDs cd = new CDs();
         System.out.println("Digite o ID do item");
         int id = in.nextInt();
+        cd.setId(id);
         in.nextLine();
 
         System.out.println("Digite o título do CD: ");
         String name = in.nextLine();
+        cd.setTitle(name);
 
         System.out.println("Digite o Autor: ");
         String author = in.nextLine();
+        cd.setAuthor(author);
 
         System.out.println("Digite a Data de aquisição: ");
         String data = in.nextLine();
+        cd.setData(data);
 
-        System.out.println("Digite o tipo do DVD: ");
-        String gender = in.nextLine();
+        cd.cadastroTracks(in);
 
-        System.out.println("Digite a Descrição: ");
-        String editor = in.nextLine();
+        return cd;
 
-        Livro livro = new Livro(id,name,author,data,gender,editor);
-        return livro;
+    }
+
+    public Item cadastrarRevista(Scanner in){
+        Revista revista = new Revista();
+        System.out.println("Digite o ID do item");
+        int id = in.nextInt();
+        revista.setId(id);
+        in.nextLine();
+
+        System.out.println("Digite o título da Revista: ");
+        String name = in.nextLine();
+        revista.setTitle(name);
+
+        System.out.println("Digite o Autor: ");
+        String author = in.nextLine();
+        revista.setAuthor(author);
+
+        System.out.println("Digite a Data de aquisição: ");
+        String data = in.nextLine();
+        revista.setData(data);
+
+        System.out.println("Digite o ano de publicação: ");
+        int ano = in.nextInt();
+        in.nextLine();
+        revista.setAno(ano);
+
+        System.out.println("Digite o volume: ");
+        String volume = in.nextLine();
+        revista.setVolume(volume);
+
+        System.out.println("Digite a Editora: ");
+        String editora = in.nextLine();
+        revista.setEditora(editora);
+
+        revista.cadastroAssuntos(in);
+
+        return revista;
 
     }
 }
